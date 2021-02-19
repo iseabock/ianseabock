@@ -43,7 +43,7 @@ export default function Layout({ children, home }) {
                 ) : (
                     <>
                         <Link href="/">
-                            <a href="/">
+                            <a>
                                 <Image
                                     priority
                                     src="/images/profile.jpg"
@@ -56,9 +56,7 @@ export default function Layout({ children, home }) {
                         </Link>
                         <h2 className={utilStyles.headingLg}>
                             <Link href="/" passHref>
-                                <a href="/" className={utilStyles.colorInherit}>
-                                    {name}
-                                </a>
+                                <a>{name}</a>
                             </Link>
                         </h2>
                     </>
@@ -68,7 +66,7 @@ export default function Layout({ children, home }) {
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">
-                        <a href="/">← Back to home</a>
+                        <a>← Back to home</a>
                     </Link>
                 </div>
             )}
