@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 MyApp.propTypes = {
-    Component: PropTypes.array,
+    Component: PropTypes.func,
     pageProps: PropTypes.object
 };
 

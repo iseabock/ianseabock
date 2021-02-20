@@ -42,5 +42,5 @@ export default function Post({ postData }) {
 }
 
 Post.propTypes = {
-    postData: PropTypes.array
+    postData: PropTypes.object
 };
