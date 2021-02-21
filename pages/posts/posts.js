@@ -1,9 +1,11 @@
 import { connectToDatabase } from '../../util/mongodb';
 import PropTypes from 'prop-types';
 
+import Layout from '../../components/layout';
+
 export default function Posts({ posts }) {
     return (
-        <div>
+        <Layout>
             <h1>Posts</h1>
             <ul>
                 {posts.map((post) => (
@@ -14,7 +16,7 @@ export default function Posts({ posts }) {
                     </li>
                 ))}
             </ul>
-        </div>
+        </Layout>
     );
 }
 

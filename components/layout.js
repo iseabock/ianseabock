@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import { Col, Container, Row } from 'react-bootstrap';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
@@ -10,7 +11,7 @@ export const siteTitle = '"Thinking" outloud';
 
 export default function Layout({ children, home }) {
     return (
-        <div className={styles.container}>
+        <Container fluid className={styles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
@@ -41,7 +42,11 @@ export default function Layout({ children, home }) {
                     </>
                 )}
             </header>
-            <main>{children}</main>
+            <main>
+                <Row>
+                    <Col>{children}</Col>
+                </Row>
+            </main>
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">
@@ -49,7 +54,7 @@ export default function Layout({ children, home }) {
                     </Link>
                 </div>
             )}
-        </div>
+        </Container>
     );
 }
 
