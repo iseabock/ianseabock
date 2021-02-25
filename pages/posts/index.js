@@ -1,5 +1,6 @@
-import { connectToDatabase } from '../../util/mongodb';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { getPostData } from '../../lib/posts';
 
 import Layout from '../../components/layout';
 
@@ -11,8 +12,11 @@ export default function Posts({ posts }) {
                 {posts.map((post) => (
                     <li key={post._id}>
                         <h2>{post.category}</h2>
-                        <h3>{post.title}</h3>
-                        <p>{post.body}</p>
+                        <Link href={`/posts/${post.slug}`}>
+                            <a>
+                                <h3>{post.title}</h3>
+                            </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -21,18 +25,7 @@ export default function Posts({ posts }) {
 }
 
 export async function getServerSideProps() {
-    const { db } = await connectToDatabase();
-    const posts = await db
-        .collection('posts')
-        .find({})
-        .sort({ metacritic: -1 })
-        .limit(20)
-        .toArray();
-    return {
-        props: {
-            posts: JSON.parse(JSON.stringify(posts))
-        }
-    };
+    return getPostData();
 }
 
 Posts.propTypes = {
