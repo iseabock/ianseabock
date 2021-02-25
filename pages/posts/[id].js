@@ -2,45 +2,55 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Layout from '../../components/layout';
-import Date from '../../components/date';
+// import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
+import { connectToDatabase } from '../../util/mongodb';
 
-import { getAllPostIds, getPostData } from '../../lib/posts';
+export default function Post({ post }) {
+    return (
+        <Layout>
+            <Head>
+                <title>{post.title}</title>
+            </Head>
+            <h1 className={utilStyles.headingXl}>{post.title}</h1>
+            <br />
+            <p className={utilStyles.lightText}>{post.body}</p>
+            <br />
+            <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+        </Layout>
+    );
+}
 
 export async function getStaticProps({ params }) {
-    const postData = await getPostData(params.id);
+    // params.id === slug
+    const { db } = await connectToDatabase();
+    const post = await db.collection('posts').findOne({ slug: params.id });
+
     return {
         props: {
-            postData
+            post: JSON.parse(JSON.stringify(post))
         }
     };
 }
 
 export async function getStaticPaths() {
-    const paths = getAllPostIds();
+    const { db } = await connectToDatabase();
+    const posts = await db
+        .collection('posts')
+        .find({})
+        .sort({ metacritic: -1 })
+        .limit(20)
+        .toArray();
+
+    const paths = posts.map((post) => `/posts/${post.id}`);
+
     return {
         paths,
-        fallback: false
+        fallback: true
     };
 }
 
-export default function Post({ postData }) {
-    return (
-        <Layout>
-            <Head>
-                <title>{postData.title}</title>
-            </Head>
-            <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-            <br />
-            <div className={utilStyles.lightText}>{postData.id}</div>
-            <br />
-            <Date dateString={postData.date} />
-            <br />
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </Layout>
-    );
-}
-
 Post.propTypes = {
-    postData: PropTypes.object
+    post: PropTypes.object
+    // post: PropTypes.array
 };
