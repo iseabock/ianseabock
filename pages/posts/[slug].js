@@ -22,9 +22,10 @@ export default function Post({ post }) {
 }
 
 export async function getStaticProps({ params }) {
+    console.log('params :', params);
     // params.id === slug
     const { db } = await connectToDatabase();
-    const post = await db.collection('posts').findOne({ slug: params.id });
+    const post = await db.collection('posts').findOne({ slug: params.slug });
 
     return {
         props: {
@@ -42,7 +43,7 @@ export async function getStaticPaths() {
         .limit(20)
         .toArray();
 
-    const paths = posts.map((post) => `/posts/${post.id}`);
+    const paths = posts.map((post) => `/posts/${post.slug}`);
 
     return {
         paths,
