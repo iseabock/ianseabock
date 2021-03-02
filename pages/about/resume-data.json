@@ -1,0 +1,158 @@
+{
+    "experince": [
+        {
+            "company": "Atlassian",
+            "sector": "B2B Tech Productivity",
+            "duration": "2020 - Present",
+            "title": "React Developer on contract",
+            "techUsed": [
+                "JavaScript",
+                "ReactJS (Hooks)",
+                "TypeScript",
+                "HTML5",
+                "CSS3",
+                "JSON",
+                "AWS"
+            ],
+            "description": [
+                "Working on pricing team for core Atlassian products.",
+                "Due to NDA I can’t get into too much detail on full responsibilities."
+            ]
+        },
+        {
+            "company": "Alchemic LTD",
+            "sector": "Visual Effects",
+            "duration": "2018 - 2019",
+            "title": "Full-stack Software Developer",
+            "techUsed": [
+                "JavaScript",
+                "ReactJS",
+                "Node.js",
+                "Electron",
+                "HTML5",
+                "CSS3",
+                "JSON",
+                "Firestore",
+                "Elasticsearch"
+            ],
+            "description": [
+                "Responsible for web app that allows VFX artists to collaborate with each other, and interact with supervising directors.",
+                "Used Slack, and Jira APIs to keep VFX artists up to date projects and issues.",
+                "Worked on GUI Electron app used to abstract GIT functions for less technical usersContributed to CLI app written in Node.js."
+            ]
+        },
+        {
+            "company": "Rain Financial",
+            "sector": "Cryptocurrency Exchange",
+            "duration": "2018 - 2018",
+            "title": "Full-stack Software Developer",
+            "techUsed": [
+                "Ruby on Rails",
+                "jQuery",
+                "Backbone",
+                "Marionette",
+                "HTML5",
+                "CSS3",
+                "JSON",
+                "Heroku"
+            ],
+            "description": [
+                "Completed a 3 month contract to get the customer facing Ruby on Rails app, that consumed a backend API (GoLang) to be production ready and able to serve first customers.",
+                "This consisted of getting user creation and sessions with two factor authentication (2FA) running smoothly.",
+                "Adding multi-digital currency support.",
+                "Buying, selling, and managing fiat and digital currency accounts.",
+                "BiDirectional (BiDi) support for languages written right to left. In this case Arabic."
+            ]
+        },
+        {
+            "company": "Stonecrop Technologies",
+            "sector": "Supply Chain Management",
+            "duration": "2014 - 2017",
+            "title": "Full-stack Software Developer",
+            "techUsed": [
+                "Ruby on Rails",
+                "jQuery",
+                "Postgres",
+                "HTML5",
+                "CSS3",
+                "JSON",
+                "AWS",
+                "S3"
+            ],
+            "description": [
+                "The application requires multiple user rolls around different stages of cell tower projects.",
+                "Main responsibility is writing and maintaining our API to support a mobile app that our warehouse employees used to fulfill orders and contractors used to complete projects.",
+                "Secondary responsibility for our warehouse inventory control system that integrated with a third party API."
+            ]
+        },
+        {
+            "company": "MyWebRoom.com",
+            "sector": "Social Network",
+            "duration": "2013 - 2014",
+            "title": "Full-stack Software Developer",
+            "techUsed": [
+                "Ruby on Rails",
+                "jQuery",
+                "Postgres",
+                "Redis",
+                "HTML5",
+                "CSS3",
+                "JSON",
+                "Heroku"
+            ],
+            "description": [
+                "Responsible for making mission critical technical decisions, performance optimization and developing new features.",
+                "Implemented search within mywebroom.com via Solr.",
+                "Rebuilt and added many features to the front-end with BackboneJS.",
+                "Introduced Agile methodologies using Scrum to the team with excellent results."
+            ]
+        },
+        {
+            "company": "Message Bus",
+            "sector": "Email Delivery Platform",
+            "duration": "2011 - 2013",
+            "title": "Full-stack Software Developer",
+            "techUsed": [
+                "Ruby on Rails",
+                "Node.js",
+                "MySQL",
+                "Postgres",
+                "Redis",
+                "JavaScript",
+                "AngularJS",
+                "JSON",
+                "HTML5",
+                "CSS3",
+                "AWS"
+            ],
+            "description": [
+                "Responsible for making mission critical technical decisions, performance optimization and developing new features.",
+                "Implemented search within mywebroom.com via Solr.",
+                "Rebuilt and added many features to the front-end with BackboneJS. Introduced Agile methodologies using Scrum to the team with excellent results."
+            ]
+        },
+        {
+            "company": "CNET/CBS Interactive - mySimon.com",
+            "sector": "Comparative Shopping",
+            "duration": "2007 - 2011",
+            "title": "Front-end Developer",
+            "techUsed": [
+                "JavaScript",
+                "Python",
+                "MySQL",
+                "CouchDB",
+                "JSON",
+                "XML",
+                "HTML",
+                "HTML5",
+                "CSS"
+            ],
+            "description": [
+                "Rebuilt entire front end when the site switched from Java platform to Python.",
+                "A/B tested many UX and UI scenarios.",
+                "Implemented and managed production of mobile version of mobile.mysimon.com.",
+                "Increased front end performance by ~40%."
+            ]
+        }
+    ]
+}
