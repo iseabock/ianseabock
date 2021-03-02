@@ -6,7 +6,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = 'Ian Seabock';
+const name = 'ian seabock';
 export const siteTitle = '"Thinking" outloud';
 
 export default function Layout({ children, home }) {
