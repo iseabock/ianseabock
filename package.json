@@ -14,7 +14,6 @@
     "date-fns": "^2.17.0",
     "gray-matter": "^4.0.2",
     "husky": "^5.0.9",
-    "mongodb": "^3.6.4",
     "next": "10.0.7",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
