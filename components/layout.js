@@ -7,17 +7,14 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'ian seabock';
-export const siteTitle = '"Thinking" outloud';
+export const siteTitle = 'Web Duhveloper';
 
 export default function Layout({ children, home }) {
     return (
         <Container fluid className={styles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
-                <meta
-                    name="description"
-                    content="Ian Seabocks public musings about web development and other stuff"
-                />
+                <meta name="description" content="Ian Seabock Personal Site" />
                 <meta
                     property="og:image"
                     content={`https://og-image.vercel.app/${encodeURI(
