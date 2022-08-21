@@ -7,7 +7,7 @@ import utilStyles from '../styles/utils.module.css';
 import homeStyles from '../styles/Home.module.css';
 import Link from 'next/link';
 
-const name = 'ian seabock';
+const name = 'ian test seabock';
 export const siteTitle = 'Web Duhveloper';
 
 export default function Layout({ children, home }) {
