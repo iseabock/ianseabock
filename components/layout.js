@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { Col, Container, Row } from 'react-bootstrap';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import homeStyles from '../styles/Home.module.css';
@@ -41,9 +42,9 @@ export default function Layout({ children, home }) {
                 )}
             </header>
             <main>
-                <Row>
-                    <Col>{children}</Col>
-                </Row>
+                <Box>
+                    <Box>{children}</Box>
+                </Box>
             </main>
             {!home && (
                 <div className={styles.backToHome}>
