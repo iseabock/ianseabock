@@ -13,7 +13,7 @@ export const siteTitle = 'Web Duhveloper';
 
 export default function Layout({ children, home }) {
     return (
-        <Container fluid className={homeStyles.container}>
+        <Container className={homeStyles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description" content="Ian Seabock Personal Site" />
