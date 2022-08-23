@@ -1,17 +1,26 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
+import Typography from '@mui/material/Typography';
+
+import Layout from '../components/layout';
+
+import config from '../config';
 
 export default function Home() {
     return (
         <Layout home>
             <Head>
-                <title>{siteTitle}</title>
+                <title>{config.siteTitle}</title>
             </Head>
-            <section className={utilStyles.headingMd}>
-                <p>i write a little code and do other things too.</p>
-            </section>
+
+            <Typography
+                sx={{
+                    lineHeight: 1.2,
+                    letterSpacing: '-0.05rem',
+                    textAlign: 'center'
+                }}>
+                i write a little code and do other things too.
+            </Typography>
         </Layout>
     );
 }

@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/globals.scss';
+import { ThemeProvider } from '@mui/material/styles';
+
+import theme from '../theme';
 
 function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />;
+    return (
+        <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+        </ThemeProvider>
+    );
 }
 
 MyApp.propTypes = {
