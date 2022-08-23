@@ -3,7 +3,6 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import homeStyles from '../styles/Home.module.css';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -11,7 +10,7 @@ import config from '../config';
 
 const Layout = ({ children }) => {
     return (
-        <Container className={homeStyles.container}>
+        <Container>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description" content="Ian Seabock Personal Site" />
