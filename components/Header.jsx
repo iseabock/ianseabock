@@ -7,8 +7,7 @@ import config from '../config';
 const Header = () => (
     <Box
         sx={{
-            marginTop: '15rem',
-            marginBottom: '1rem'
+            marginTop: '15rem'
         }}>
         <Typography
             component="h1"
@@ -20,6 +19,14 @@ const Header = () => (
                 textAlign: 'center'
             }}>
             {config.name}
+        </Typography>
+        <Typography
+            sx={{
+                lineHeight: 1.2,
+                letterSpacing: '-0.05rem',
+                textAlign: 'center'
+            }}>
+            i write a little code and do other things too.
         </Typography>
     </Box>
 );
