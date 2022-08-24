@@ -10,7 +10,14 @@ import config from '../config';
 
 const Layout = ({ children }) => {
     return (
-        <Container>
+        <Container
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                backgroundColor: '#FFFFFF',
+                maxWidth: '1200px',
+                height: '100vh'
+            }}>
             <Head>
                 <title>{config.siteTitle}</title>
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -28,11 +35,9 @@ const Layout = ({ children }) => {
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <Header />
-            <main>
-                <Box>
-                    <Box>{children}</Box>
-                </Box>
-            </main>
+            <Box sx={{ flex: '1 0 auto' }}>
+                <Box>{children}</Box>
+            </Box>
             <Footer />
         </Container>
     );
