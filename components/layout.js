@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
                 flexDirection: 'column',
                 backgroundColor: '#FFFFFF',
                 maxWidth: '1200px',
-                height: '100vh'
+                height: '99vh'
             }}>
             <Head>
                 <title>{config.siteTitle}</title>
