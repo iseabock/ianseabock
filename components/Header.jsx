@@ -1,7 +1,8 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
+import Typewriter from './Typewriter';
 
 import config from '../config';
 
@@ -9,6 +10,17 @@ import { getPostData } from '../lib/posts';
 
 const Header = () => {
     getPostData();
+
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
     return (
         <Box
             sx={{
@@ -33,7 +45,10 @@ const Header = () => {
                     letterSpacing: '-0.05rem',
                     textAlign: 'center'
                 }}>
-                i write a little code and do other things too.
+                <Typewriter
+                    sentence="i write a little code and do other things too."
+                    typingSpeed={100}
+                />
             </Typography>
             <Box
                 sx={{

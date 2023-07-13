@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 
-import Header from './Header';
 import Footer from './Footer';
 import config from '../config';
 
@@ -33,7 +32,6 @@ const Layout = ({ children }) => {
                 <meta name="og:title" content={config.siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <Header />
             <Box sx={{ flex: '1 0 auto' }}>
                 <Box>{children}</Box>
             </Box>
