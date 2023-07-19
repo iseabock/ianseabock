@@ -1,3 +1,3 @@
-const config = { name: 'ian seabock', siteTitle: 'Web Duhveloper' };
+const config = { name: 'ian seabock', siteTitle: 'Web Developer' };
 
 export default config;

@@ -54,8 +54,7 @@ const Header = () => {
                 }}>
                 <Typewriter
                     sentence="i write a little code and do other things too."
-                    typingSpeed={200}
-                    pauseAtIndices={[21]}
+                    typingSpeed={150}
                 />
             </Typography>
             <Box

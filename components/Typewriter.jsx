@@ -3,10 +3,23 @@ import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-const BlinkingCursor = () => {
+const BlinkingCursor = ({ sentenceComplete }) => {
     const [show, setShow] = useState(true);
+    const [isBlinkOn, setIsBlinkOn] = useState(false);
 
     useEffect(() => {
+        if (sentenceComplete) {
+            setIsBlinkOn(true);
+            setTimeout(() => {
+                setIsBlinkOn(false);
+                setShow(false);
+            }, 7000);
+        }
+    }, [sentenceComplete]);
+
+    useEffect(() => {
+        if (!isBlinkOn) return;
+
         const timer = setInterval(() => {
             setShow((prevShow) => !prevShow);
         }, 500);
@@ -14,7 +27,7 @@ const BlinkingCursor = () => {
         return () => {
             clearInterval(timer);
         };
-    }, []);
+    }, [isBlinkOn]);
 
     return <div sx={{ width: '1rem' }}>{show ? '_' : ' '}</div>;
 };
@@ -56,18 +69,19 @@ const Typewriter = ({ sentence, typingSpeed }) => {
             <Typography
                 component="div"
                 sx={{
-                    width: '24.2rem',
+                    width: '24rem',
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'flex-start',
                     margin: '0 auto',
+                    whiteSpace: 'nowrap',
                     fontSize: fontSize
                 }}>
                 {currentText}
-                <BlinkingCursor />
+                <BlinkingCursor sentenceComplete={currentText.length === sentence.length} />
             </Typography>
-            <div id="sentenceTest" style={{ width: '24.2rem' }}>
+            <div id="sentenceTest" style={{ width: '24rem' }}>
                 <div
                     id="text"
                     style={{
@@ -86,6 +100,10 @@ const Typewriter = ({ sentence, typingSpeed }) => {
 Typewriter.propTypes = {
     sentence: PropTypes.string,
     typingSpeed: PropTypes.number
+};
+
+BlinkingCursor.propTypes = {
+    sentenceComplete: PropTypes.bool
 };
 
 export default Typewriter;
