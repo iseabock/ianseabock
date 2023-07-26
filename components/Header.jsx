@@ -1,26 +1,11 @@
-import { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Typewriter from './Typewriter';
 
-import config from '../config';
-
-import { getPostData } from '../lib/posts';
+import constants from '../constants';
 
 const Header = () => {
-    getPostData();
-
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://platform.linkedin.com/badges/js/profile.js';
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
     return (
         <Box
             sx={{
@@ -36,7 +21,7 @@ const Header = () => {
                     letterSpacing: '-0.05rem',
                     textAlign: 'center'
                 }}>
-                {config.name}
+                {constants.name}
             </Typography>
             <Typography
                 component="h2"
@@ -52,10 +37,7 @@ const Header = () => {
                     textAlign: 'center',
                     height: '2rem'
                 }}>
-                <Typewriter
-                    sentence="i write a little code and do other things too."
-                    typingSpeed={150}
-                />
+                <Typewriter sentence={constants.sentence} typingSpeed={150} containerSize={24} />
             </Typography>
             <Box
                 component={'div'}
@@ -76,7 +58,7 @@ const Header = () => {
                     }}>
                     Contact me:{' '}
                     <Link
-                        href="https://www.linkedin.com/in/seabock/"
+                        href={constants.linkedin}
                         sx={{
                             marginLeft: '5px',
                             marginBottom: '-5px',

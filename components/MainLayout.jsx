@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 
 import Header from './Header';
 import Footer from './Footer';
-import config from '../config';
+import constants from '../constants';
 
 const MainLayout = ({ children }) => {
     return (
@@ -19,7 +19,7 @@ const MainLayout = ({ children }) => {
                 height: '99vh'
             }}>
             <Head>
-                <title>{config.siteTitle}</title>
+                <title>{constants.siteTitle}</title>
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -27,10 +27,10 @@ const MainLayout = ({ children }) => {
                 <meta
                     property="og:image"
                     content={`https://og-image.vercel.app/${encodeURI(
-                        config.siteTitle
+                        constants.siteTitle
                     )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
                 />
-                <meta name="og:title" content={config.siteTitle} />
+                <meta name="og:title" content={constants.siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <Header />
