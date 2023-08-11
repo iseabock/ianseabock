@@ -1,0 +1,26 @@
+body {
+    // width: 100vw;
+    width: 100vmax;
+    #__next {
+        position: relative;
+
+        .inactive {
+            opacity: 0;
+            filter: blur(3px);
+            transform: translateY(100px);
+            transition: all 1.5s ease-in-out;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .inactive {
+                transition: none;
+            }
+        }
+
+        .active {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+    }
+}

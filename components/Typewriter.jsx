@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+
+import { TypewriterContext } from '../util/Context';
 
 const BlinkingCursor = ({ sentenceComplete }) => {
     const [show, setShow] = useState(true);
@@ -13,7 +15,7 @@ const BlinkingCursor = ({ sentenceComplete }) => {
             setIsBlinkOn(true);
             setTimeout(() => {
                 setIsBlinkOn(false);
-                setShow(false);
+                setShow((prevShow) => !prevShow);
             }, 7000);
         }
     }, [sentenceComplete]);
@@ -31,15 +33,16 @@ const BlinkingCursor = ({ sentenceComplete }) => {
         };
     }, [isBlinkOn]);
 
-    return <div sx={{ width: '1rem' }}>{show ? '_' : ' '}</div>;
+    return <Box sx={{ width: '1rem' }}>{show ? '_' : ' '}</Box>;
 };
 
 const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [fontSize, setFontSize] = useState(16);
+    const { sentenceComplete, setSentenceComplete } = useContext(TypewriterContext);
 
-    // Randomize typing speed to mimic human typing
+    // Randomize typing speed to mimic human typing... sort of. Bigger number = slower btw
     let speed = Math.floor(Math.random() * typingSpeed) + 50;
 
     // Dynamically set font size to fit container
@@ -52,7 +55,7 @@ const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
         while (Math.ceil(text.clientWidth) > container.clientWidth) {
             fontSize--;
             text.style.fontSize = fontSize + 'px';
-            setFontSize(`${fontSize--}px`);
+            setFontSize(`${fontSize}px`);
         }
     }, [fontSize]);
 
@@ -72,24 +75,29 @@ const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
         };
     }, [sentence, currentIndex, typingSpeed]);
 
+    useEffect(() => {
+        currentText.length === sentence.length && setSentenceComplete(true);
+    }, [currentText, sentence]);
+
     return (
         <Box flexDirection="column" alignItems="center" justifyContent="center">
             <Typography
                 component="div"
+                variant="courier"
                 sx={{
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'flex-start',
-                    margin: '0 auto',
+                    // margin: '0 auto',
                     whiteSpace: 'nowrap',
                     width: `${containerSize}rem`,
                     fontSize: fontSize
                 }}>
                 {currentText}
-                <BlinkingCursor sentenceComplete={currentText.length === sentence.length} />
+                <BlinkingCursor sentenceComplete={sentenceComplete} />
             </Typography>
-            <div id="sentenceTest" style={{ width: `${containerSize}rem` }}>
+            <Box id="sentenceTest" sx={{ width: `100%` }}>
                 <div
                     id="text"
                     style={{
@@ -100,7 +108,7 @@ const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
                     }}>
                     {sentence}
                 </div>
-            </div>
+            </Box>
         </Box>
     );
 };
