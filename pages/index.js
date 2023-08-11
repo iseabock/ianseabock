@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import MainLayout from '../components/MainLayout';
 import Contact from '../components/Contact';
-import HomeSection from '../components/homeSection';
+import HomeSection from '../components/HomeSection';
 
 import constants from '../constants';
 
