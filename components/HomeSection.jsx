@@ -35,7 +35,8 @@ const HomeSection = ({ sectionObject }) => {
                         component="p"
                         sx={{
                             textAlign: 'left',
-                            margin: '1.5em 0'
+                            margin: '1.5rem 0',
+                            fontSize: '1.5rem'
                         }}>
                         {copyItem}
                     </Typography>

@@ -36,28 +36,13 @@ const BlinkingCursor = ({ sentenceComplete }) => {
     return <Box sx={{ width: '1rem' }}>{show ? '_' : ' '}</Box>;
 };
 
-const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
+const Typewriter = ({ sentence, typingSpeed }) => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [fontSize, setFontSize] = useState(16);
     const { sentenceComplete, setSentenceComplete } = useContext(TypewriterContext);
 
     // Randomize typing speed to mimic human typing... sort of. Bigger number = slower btw
     let speed = Math.floor(Math.random() * typingSpeed) + 50;
-
-    // Dynamically set font size to fit container
-    useEffect(() => {
-        let container = document.getElementById('sentenceTest');
-        let text = document.getElementById('text');
-        let fontSize = 20;
-        text.style.fontSize = fontSize + 'px';
-
-        while (Math.ceil(text.clientWidth) > container.clientWidth) {
-            fontSize--;
-            text.style.fontSize = fontSize + 'px';
-            setFontSize(`${fontSize}px`);
-        }
-    }, [fontSize]);
 
     // Type out sentence
     useEffect(() => {
@@ -86,13 +71,10 @@ const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
                 variant="courier"
                 sx={{
                     display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
                     justifyContent: 'flex-start',
-                    // margin: '0 auto',
+                    textAlign: 'left',
                     whiteSpace: 'nowrap',
-                    width: `${containerSize}rem`,
-                    fontSize: fontSize
+                    fontSize: '1.5rem'
                 }}>
                 {currentText}
                 <BlinkingCursor sentenceComplete={sentenceComplete} />
@@ -115,8 +97,8 @@ const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
 
 Typewriter.propTypes = {
     sentence: PropTypes.string,
-    typingSpeed: PropTypes.number,
-    containerSize: PropTypes.number
+    typingSpeed: PropTypes.number
+    // containerSize: PropTypes.number
 };
 
 BlinkingCursor.propTypes = {

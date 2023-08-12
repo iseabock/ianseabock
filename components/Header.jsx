@@ -19,7 +19,7 @@ const Header = () => {
                 variant="courier"
                 component="h1"
                 sx={{
-                    fontSize: '2.5rem !important',
+                    fontSize: '2.8rem',
                     lineHeight: 1.2,
                     fontWeight: 800,
                     letterSpacing: '-0.05rem',
@@ -40,7 +40,7 @@ const Header = () => {
                     textAlign: 'center',
                     height: '2rem'
                 }}>
-                <Typewriter sentence={constants.sentence} typingSpeed={25} containerSize={25} />
+                <Typewriter sentence={constants.sentence} typingSpeed={25} containerSize={35} />
             </Box>
         </Box>
     );
