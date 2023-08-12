@@ -80,16 +80,16 @@ const Typewriter = ({ sentence, typingSpeed }) => {
                 <BlinkingCursor sentenceComplete={sentenceComplete} />
             </Typography>
             <Box id="sentenceTest" sx={{ width: `100%` }}>
-                <div
+                <Box
                     id="text"
-                    style={{
+                    sx={{
                         whiteSpace: 'nowrap',
                         width: 'auto',
                         position: 'absolute',
                         color: 'transparent'
                     }}>
                     {sentence}
-                </div>
+                </Box>
             </Box>
         </Box>
     );

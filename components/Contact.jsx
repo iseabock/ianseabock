@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import Paper from './Paper';
 
@@ -11,6 +12,7 @@ import constants from '../constants';
 
 const Contact = () => {
     const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up('laptop'));
     const { sentenceComplete } = useContext(TypewriterContext);
 
     return (
@@ -35,7 +37,8 @@ const Contact = () => {
                     component="p"
                     sx={{
                         textAlign: 'left',
-                        margin: '1.5em 0'
+                        margin: '1.5rem 0',
+                        fontSize: matches ? '1rem' : '1.5rem'
                     }}>
                     I&apos;m currently on the market for a new role, so if you&apos;re looking for a
                     developer...

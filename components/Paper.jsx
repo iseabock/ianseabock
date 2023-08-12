@@ -84,7 +84,7 @@ const Paper = ({ children }) => {
                 sx={{
                     backgroundColor: theme.palette.paper.background,
                     position: 'relative',
-                    width: matches ? '55%' : '100%',
+                    width: matches ? '55%' : '90%',
                     padding: '2em',
                     margin: '9rem auto',
                     border: '1px solid rgba(0, 0, 0, .04)',
