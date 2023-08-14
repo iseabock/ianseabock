@@ -39,12 +39,25 @@ const BlinkingCursor = ({ sentenceComplete }) => {
 const Typewriter = ({ sentence, typingSpeed }) => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [fontSize, setFontSize] = useState(16);
     const { sentenceComplete, setSentenceComplete } = useContext(TypewriterContext);
 
     // Randomize typing speed to mimic human typing... sort of. Bigger number = slower btw
     let speed = Math.floor(Math.random() * typingSpeed) + 50;
 
     // Type out sentence
+    useEffect(() => {
+        var container = document.getElementById('sentenceTest');
+        var text = document.getElementById('text');
+        var fontSize = 20;
+        text.style.fontSize = fontSize + 'px';
+        while (Math.ceil(text.clientWidth) > container.clientWidth) {
+            fontSize--;
+            text.style.fontSize = fontSize + 'px';
+            setFontSize(`${fontSize--}px`);
+        }
+    }, [fontSize]);
+
     useEffect(() => {
         const timer = setInterval(() => {
             if (currentIndex < sentence.length) {
@@ -70,16 +83,19 @@ const Typewriter = ({ sentence, typingSpeed }) => {
                 component="div"
                 variant="courier"
                 sx={{
+                    width: '24rem',
                     display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
                     justifyContent: 'flex-start',
-                    textAlign: 'left',
+                    margin: '0 auto',
                     whiteSpace: 'nowrap',
-                    fontSize: '1.5rem'
+                    fontSize: fontSize
                 }}>
                 {currentText}
                 <BlinkingCursor sentenceComplete={sentenceComplete} />
             </Typography>
-            <Box id="sentenceTest" sx={{ width: `100%` }}>
+            <Box id="sentenceTest" sx={{ width: '24rem' }}>
                 <Box
                     id="text"
                     sx={{
