@@ -78,7 +78,11 @@ const Typewriter = ({ sentence, typingSpeed }) => {
     }, [currentText, sentence]);
 
     return (
-        <Box flexDirection="column" alignItems="center" justifyContent="center">
+        <Box
+            // sx={{ width: '100%' }}
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center">
             <Typography
                 component="div"
                 variant="courier"
