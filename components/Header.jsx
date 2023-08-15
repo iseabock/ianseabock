@@ -40,7 +40,7 @@ const Header = () => {
                     textAlign: 'center',
                     height: '2rem'
                 }}>
-                <Typewriter sentence={constants.sentence} typingSpeed={25} containerSize={35} />
+                <Typewriter sentence={constants.sentence} typingSpeed={80} containerSize={21} />
             </Box>
         </Box>
     );
