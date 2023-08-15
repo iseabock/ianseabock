@@ -23,7 +23,7 @@ const Home = () => {
 
     return (
         <MainLayout home={true}>
-            <Box sx={{ position: 'relative', marginTop: '-110px' }}>
+            <Box sx={{ position: 'relative', marginTop: '100px' }}>
                 {constants.home.map((sectionObject, index) => (
                     <HomeSection key={index} sectionObject={sectionObject} />
                 ))}
