@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Box from '@mui/material/Box';
 
 import MainLayout from '../components/MainLayout';
 import Contact from '../components/Contact';
@@ -22,12 +23,12 @@ const Home = () => {
 
     return (
         <MainLayout home={true}>
-            <div>
+            <Box sx={{ position: 'relative', marginTop: '-110px' }}>
                 {constants.home.map((sectionObject, index) => (
                     <HomeSection key={index} sectionObject={sectionObject} />
                 ))}
                 <Contact />
-            </div>
+            </Box>
         </MainLayout>
     );
 };

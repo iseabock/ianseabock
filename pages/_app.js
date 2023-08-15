@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import IconButton from '@mui/material/IconButton';
+// import DarkModeIcon from '@mui/icons-material/DarkMode';
+// import LightModeIcon from '@mui/icons-material/LightMode';
+// import IconButton from '@mui/material/IconButton';
 
-import { lightTheme, darkTheme } from '../theme';
+import { lightTheme } from '../theme';
 import './index.scss';
 
 import { ThemeContext } from '../util/Context';
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
 
     return (
         <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-            <IconButton
+            {/* <IconButton
                 sx={{ position: 'absolute', top: '5px', right: '5px' }}
                 onClick={() => setDarkMode(!darkMode)}>
                 {darkMode ? (
@@ -24,8 +24,8 @@ function MyApp({ Component, pageProps }) {
                 ) : (
                     <DarkModeIcon sx={{ color: '#666666' }} />
                 )}
-            </IconButton>
-            <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+            </IconButton> */}
+            <ThemeProvider theme={lightTheme}>
                 <CssBaseline />
                 <Component {...pageProps} />
             </ThemeProvider>

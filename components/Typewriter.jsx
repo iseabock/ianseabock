@@ -33,13 +33,13 @@ const BlinkingCursor = ({ sentenceComplete }) => {
         };
     }, [isBlinkOn]);
 
-    return <Box sx={{ width: '1rem' }}>{show ? '_' : ' '}</Box>;
+    return <Box>{show ? <span>_</span> : <span style={{ color: 'transparent' }}>_</span>}</Box>;
 };
 
 const Typewriter = ({ sentence, typingSpeed }) => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [fontSize, setFontSize] = useState(16);
+    const [fontSize, setFontSize] = useState(20);
     const { sentenceComplete, setSentenceComplete } = useContext(TypewriterContext);
 
     // Randomize typing speed to mimic human typing... sort of. Bigger number = slower btw
@@ -49,12 +49,12 @@ const Typewriter = ({ sentence, typingSpeed }) => {
     useEffect(() => {
         var container = document.getElementById('sentenceTest');
         var text = document.getElementById('text');
-        var fontSize = 20;
-        text.style.fontSize = fontSize + 'px';
+        var testFontSize = 20;
+        text.style.fontSize = testFontSize + 'px';
         while (Math.ceil(text.clientWidth) > container.clientWidth) {
-            fontSize--;
-            text.style.fontSize = fontSize + 'px';
-            setFontSize(`${fontSize--}px`);
+            testFontSize--;
+            text.style.fontSize = testFontSize + 'px';
+            setFontSize(`${testFontSize--}px`);
         }
     }, [fontSize]);
 
@@ -79,7 +79,7 @@ const Typewriter = ({ sentence, typingSpeed }) => {
 
     return (
         <Box
-            // sx={{ width: '100%' }}
+            sx={{ width: '100%' }}
             flexDirection="column"
             alignItems="center"
             justifyContent="center">
@@ -87,7 +87,7 @@ const Typewriter = ({ sentence, typingSpeed }) => {
                 component="div"
                 variant="courier"
                 sx={{
-                    width: '24rem',
+                    width: 'fit-content',
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -100,16 +100,19 @@ const Typewriter = ({ sentence, typingSpeed }) => {
                 <BlinkingCursor sentenceComplete={sentenceComplete} />
             </Typography>
             <Box id="sentenceTest" sx={{ width: '24rem' }}>
-                <Box
+                <Typography
+                    component="div"
+                    variant="courier"
                     id="text"
                     sx={{
                         whiteSpace: 'nowrap',
                         width: 'auto',
                         position: 'absolute',
-                        color: 'transparent'
+                        color: 'transparent',
+                        fontSize: fontSize
                     }}>
-                    {sentence}
-                </Box>
+                    {sentence + '_'}
+                </Typography>
             </Box>
         </Box>
     );
@@ -117,8 +120,8 @@ const Typewriter = ({ sentence, typingSpeed }) => {
 
 Typewriter.propTypes = {
     sentence: PropTypes.string,
-    typingSpeed: PropTypes.number
-    // containerSize: PropTypes.number
+    typingSpeed: PropTypes.number,
+    containerSize: PropTypes.number
 };
 
 BlinkingCursor.propTypes = {
