@@ -36,7 +36,7 @@ const BlinkingCursor = ({ sentenceComplete }) => {
     return <Box>{show ? <span>_</span> : <span style={{ color: 'transparent' }}>_</span>}</Box>;
 };
 
-const Typewriter = ({ sentence, typingSpeed }) => {
+const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [fontSize, setFontSize] = useState(20);
@@ -99,7 +99,7 @@ const Typewriter = ({ sentence, typingSpeed }) => {
                 {currentText}
                 <BlinkingCursor sentenceComplete={sentenceComplete} />
             </Typography>
-            <Box id="sentenceTest" sx={{ width: '24rem' }}>
+            <Box id="sentenceTest" sx={{ width: `${containerSize}rem` }}>
                 <Typography
                     component="div"
                     variant="courier"

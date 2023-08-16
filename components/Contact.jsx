@@ -22,7 +22,7 @@ const Contact = () => {
                     variant="libre"
                     component="h2"
                     sx={{
-                        fontSize: '2.8em',
+                        fontSize: matches ? '2.8rem' : '2rem',
                         fontWeight: 'normal',
                         textAlign: 'center',
                         padding: '0.2em 0',
@@ -38,7 +38,7 @@ const Contact = () => {
                     sx={{
                         textAlign: 'left',
                         margin: '1.5rem 0',
-                        fontSize: matches ? '1rem' : '1.5rem'
+                        fontSize: matches ? '1rem' : '1.2rem'
                     }}>
                     I&apos;m currently on the market for a new role, so if you&apos;re looking for a
                     developer...

@@ -7,7 +7,7 @@ const constants = {
         {
             title: 'Welcome',
             copy: [
-                "Hey there, I'm Ian, a seasoned web developer with a passion for crafting seamless digital experiences. I've been in web development for a while, but over the past 8 years, I've been immersed in frameworks like React, Express, and Next.js. My journey began with good old fashioned HTML, CSS and Javascript, then PHP, Python, Ruby on Rails and jQuery, where I honed my skills and set the stage for an exciting evolution in the digital landscape where weare today."
+                "Hey there, I'm Ian, a seasoned web developer with a passion for crafting seamless digital experiences. I've been in web development for a while, but over the past 8 years, I've been immersed in frameworks like React, Express, and Next.js. My journey began with good old fashioned HTML, CSS and Javascript, then PHP, Python, Ruby on Rails and jQuery, where I honed my skills and set the stage for an exciting evolution in the digital landscape where we are today."
             ]
         },
         {
@@ -19,7 +19,9 @@ const constants = {
         {
             title: 'Other Things',
             copy: [
-                "When I step away from the screen, you'll often find me outdoors or tending to my house plants. Nature is my sanctuary, and I love hiking, exploring new trails, and soaking in the beauty of the natural world. My passion for the outdoors not only rejuvenates me but also influences my approach to problem-solving and creativity in my coding projects.",
+                "When I step away from the screen, you'll often find me outdoors on a trail, disc golfing or tending to my house plants.",
+                'Nature is my sanctuary, and I love hiking, exploring new trails, and soaking in the beauty of the natural world. My passion for the outdoors not only rejuvenates me but also influences my approach to problem-solving and creativity in my coding projects.',
+                "I'm blessed to have some amazing disc golf courses in my area, and I love to get out and play a round whenever I can. I've been playing for the past 4 years, and it's probably one of the best ways to get some exercise and enjoy the outdoors.",
                 "House plants are another one of my hobbies. There's something rewarding about nurturing a plant and watching it thrive over time. The patience and care I invest in my plants mirror the dedication I bring to writing clean, efficient code."
             ]
         }
