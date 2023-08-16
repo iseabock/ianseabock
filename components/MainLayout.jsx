@@ -20,7 +20,8 @@ const MainLayout = ({ children }) => {
                     display: 'flex',
                     flexDirection: 'column',
                     maxWidth: '1200px',
-                    position: 'relative'
+                    position: 'relative',
+                    height: '99vh'
                 }}>
                 <Head>
                     <title>{constants.siteTitle}</title>

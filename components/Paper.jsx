@@ -86,7 +86,7 @@ const Paper = ({ children }) => {
                     position: 'relative',
                     width: matches ? '55%' : '90%',
                     padding: '2em',
-                    margin: '0 auto 8rem auto',
+                    margin: '8rem auto 8rem auto',
                     border: '1px solid rgba(0, 0, 0, .04)',
                     borderRadius: '5px',
                     '&:before': {

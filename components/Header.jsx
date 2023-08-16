@@ -8,8 +8,6 @@ const Header = () => {
     return (
         <Box
             sx={{
-                position: 'sticky',
-                top: 0,
                 height: '85vh',
                 paddingTop: '15rem'
             }}>
