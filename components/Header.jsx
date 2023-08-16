@@ -10,10 +10,8 @@ const Header = () => {
             sx={{
                 position: 'sticky',
                 top: 0,
-                // margin: '0 auto',
-                height: '80vh',
-                paddingTop: '15rem',
-                paddingBottom: '16rem'
+                height: '85vh',
+                paddingTop: '15rem'
             }}>
             <Typography
                 variant="courier"

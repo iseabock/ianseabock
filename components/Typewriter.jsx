@@ -43,7 +43,7 @@ const Typewriter = ({ sentence, typingSpeed }) => {
     const { sentenceComplete, setSentenceComplete } = useContext(TypewriterContext);
 
     // Randomize typing speed to mimic human typing... sort of. Bigger number = slower btw
-    let speed = Math.floor(Math.random() * typingSpeed);
+    let speed = Math.floor(Math.random() * typingSpeed) + 25;
 
     // Type out sentence
     useEffect(() => {

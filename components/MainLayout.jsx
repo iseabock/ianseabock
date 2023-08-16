@@ -20,7 +20,6 @@ const MainLayout = ({ children }) => {
                     display: 'flex',
                     flexDirection: 'column',
                     maxWidth: '1200px',
-                    height: '99vh',
                     position: 'relative'
                 }}>
                 <Head>
