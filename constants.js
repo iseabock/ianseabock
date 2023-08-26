@@ -13,7 +13,9 @@ const constants = {
         {
             title: 'A Little Code',
             copy: [
-                "I thrive on turning ideas into functional, user-friendly websites. From crafting sleek user interfaces with React to building robust backend systems using Node.js, Express or Next.js, I've enjoyed the ever-changing challenges of web development. My transition from Ruby on Rails and jQuery to these modern tools has been an exciting ride, and I'm always eager to learn and adapt as technology evolves."
+                "I thrive on turning ideas into functional, user-friendly websites. From crafting sleek user interfaces with React to building robust backend systems using Node.js, Express or Next.js, I've enjoyed the ever-changing challenges of web development. My transition from Ruby on Rails and jQuery to these modern tools has been an exciting ride, and I'm always eager to learn and adapt as technology evolves.",
+                "As of late (Aug 2023), I've been teaching myself Flutter and Dart, and I'm excited to see where this new journey takes me. I think I'll add a blog to this site soon to document some of that.",
+                "If you'd like to use that typewiter effect above checkout this gist <a target='_blank' href='https://gist.github.com/iseabock/984fcea112233f7284a0c032ee25ca8c'>here</a>. I'll add a gist for these random lifted corners soon too, but I want to make some changes to them first."
             ]
         },
         {

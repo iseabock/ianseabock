@@ -39,9 +39,10 @@ const HomeSection = ({ sectionObject }) => {
                             textAlign: 'left',
                             margin: '1.5rem 0',
                             fontSize: matches ? '1rem' : '1.2rem'
-                        }}>
-                        {copyItem}
-                    </Typography>
+                        }}
+                        dangerouslySetInnerHTML={{
+                            __html: copyItem
+                        }}></Typography>
                 ))}
             </Paper>
         </section>
