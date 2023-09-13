@@ -99,6 +99,7 @@ const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
                 {currentText}
                 <BlinkingCursor sentenceComplete={sentenceComplete} />
             </Typography>
+            {/* <Box id="sentenceTest" sx={{ width: `${containerSize}rem` }}> */}
             <Box id="sentenceTest" sx={{ width: `${containerSize}rem` }}>
                 <Typography
                     component="div"
