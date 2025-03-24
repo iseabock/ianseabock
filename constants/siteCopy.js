@@ -6,21 +6,20 @@ const constants = {
     home: [
         {
             title: 'Welcome',
-            copy: [
+            body: [
                 "Hey there, I'm Ian, a seasoned web developer with a passion for crafting seamless digital experiences. I've been in web development for a while, but over the past 8 years, I've been immersed in frameworks like React, Express, and Next.js. My journey began with good old fashioned HTML, CSS and Javascript, then PHP, Python, Ruby on Rails and jQuery, where I honed my skills and set the stage for an exciting evolution in the digital landscape where we are today."
             ]
         },
         {
             title: 'A Little Code',
-            copy: [
+            body: [
                 "I thrive on turning ideas into functional, user-friendly websites. From crafting sleek user interfaces with React to building robust backend systems using Node.js, Express or Next.js, I've enjoyed the ever-changing challenges of web development. My transition from Ruby on Rails and jQuery to these modern tools has been an exciting ride, and I'm always eager to learn and adapt as technology evolves.",
-                "As of late (Aug 2023), I've been teaching myself Flutter and Dart, and I'm excited to see where this new journey takes me. I think I'll add a blog to this site soon to document some of that.",
                 "If you'd like to use that typewiter effect above checkout this gist <a target='_blank' href='https://gist.github.com/iseabock/984fcea112233f7284a0c032ee25ca8c'>here</a>. I'll add a gist for these random lifted corners soon too, but I want to make some changes to them first."
             ]
         },
         {
             title: 'Other Things',
-            copy: [
+            body: [
                 "When I step away from the screen, you'll often find me outdoors on a trail, disc golfing or tending to my house plants.",
                 'Nature is my sanctuary, and I love hiking, exploring new trails, and soaking in the beauty of the natural world. My passion for the outdoors not only rejuvenates me but also influences my approach to problem-solving and creativity in my coding projects.',
                 "I'm blessed to have some amazing disc golf courses in my area, and I love to get out and play a round whenever I can. I've been playing for the past 4 years, and it's probably one of the best ways to get some exercise and enjoy the outdoors.",
@@ -28,6 +27,12 @@ const constants = {
             ]
         }
     ],
+    connect: {
+        title: "Let's Connect",
+        body: [
+            "I'm currently on the market for a new role, so if you're looking for a developer..."
+        ]
+    },
     technologies: [
         {
             'Hard Skills': [

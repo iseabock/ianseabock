@@ -5,7 +5,7 @@ import MainLayout from '../components/MainLayout';
 import Contact from '../components/Contact';
 import HomeSection from '../components/HomeSection';
 
-import constants from '../constants';
+import constants from '../constants/siteCopy';
 
 const Home = () => {
     useEffect(() => {

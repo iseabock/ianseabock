@@ -14,7 +14,8 @@ const HomeSection = ({ sectionObject }) => {
     const { sentenceComplete } = useContext(TypewriterContext);
 
     return (
-        <section hidden={sentenceComplete ? false : true} className="inactive">
+        <section hidden={!sentenceComplete} className="inactive">
+            {console.log('sentenceComplete :', sentenceComplete)}
             <Paper>
                 <Typography
                     variant="libre"
@@ -30,7 +31,7 @@ const HomeSection = ({ sectionObject }) => {
                     }}>
                     {sectionObject.title}
                 </Typography>
-                {sectionObject.copy.map((copyItem, index) => (
+                {sectionObject.body.map((copyItem, index) => (
                     <Typography
                         key={index}
                         variant="libre"

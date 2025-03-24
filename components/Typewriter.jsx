@@ -47,7 +47,7 @@ const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
 
     // Type out sentence
     useEffect(() => {
-        var container = document.getElementById('sentenceTest');
+        var container = document.getElementById('sentenceContainer');
         var text = document.getElementById('text');
         var testFontSize = 20;
         text.style.fontSize = testFontSize + 'px';
@@ -99,8 +99,7 @@ const Typewriter = ({ sentence, typingSpeed, containerSize }) => {
                 {currentText}
                 <BlinkingCursor sentenceComplete={sentenceComplete} />
             </Typography>
-            {/* <Box id="sentenceTest" sx={{ width: `${containerSize}rem` }}> */}
-            <Box id="sentenceTest" sx={{ width: `${containerSize}rem` }}>
+            <Box id="sentenceContainer" sx={{ width: `${containerSize}rem` }}>
                 <Typography
                     component="div"
                     variant="courier"

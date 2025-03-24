@@ -8,7 +8,7 @@ import { TypewriterContext } from '../util/Context';
 
 import Header from './Header';
 import Footer from './Footer';
-import constants from '../constants';
+import constants from '../constants/siteCopy';
 
 const MainLayout = ({ children }) => {
     const [sentenceComplete, setSentenceComplete] = useState(false);

@@ -8,7 +8,7 @@ import Paper from './Paper';
 
 import { TypewriterContext } from '../util/Context';
 
-import constants from '../constants';
+import constants from '../constants/siteCopy';
 
 const Contact = () => {
     const theme = useTheme();
@@ -30,7 +30,7 @@ const Contact = () => {
                         borderTop: `1px solid ${theme.palette.shadow.primary}`,
                         borderBottom: `1px solid ${theme.palette.shadow.primary}`
                     }}>
-                    Let&apos;s Connect
+                    {constants.connect.title}
                 </Typography>
                 <Typography
                     variant="libre"
@@ -40,8 +40,7 @@ const Contact = () => {
                         margin: '1.5rem 0',
                         fontSize: matches ? '1rem' : '1.2rem'
                     }}>
-                    I&apos;m currently on the market for a new role, so if you&apos;re looking for a
-                    developer...
+                    {constants.connect.body}
                     <Link
                         href={constants.linkedin}
                         sx={{
