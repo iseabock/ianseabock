@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import Paper from './Paper';
+import Paper from './paper/Paper';
 
 import { TypewriterContext } from '../util/Context';
 
