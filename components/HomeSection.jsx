@@ -15,7 +15,6 @@ const HomeSection = ({ sectionObject }) => {
 
     return (
         <section hidden={!sentenceComplete} className="inactive">
-            {console.log('sentenceComplete :', sentenceComplete)}
             <Paper>
                 <Typography
                     variant="libre"

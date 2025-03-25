@@ -91,7 +91,6 @@ const BentCorner = ({ x, y }) => {
     ];
 
     const getCornerVariation = (x, y) => {
-        console.log('Math.floor(Math.random() * 3)', Math.floor(Math.random() * 3));
         if (x === 'right' && y === 'top') {
             return topRightVariations[Math.floor(Math.random() * 3)];
         } else if (x === 'left' && y === 'top') {
